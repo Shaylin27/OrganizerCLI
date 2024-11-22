@@ -1,0 +1,7 @@
+{
+  "Documents": ["pdf", "docx", "txt", "xls", "xlsx", "pptx", "odt"],
+  "Videos": ["mp4", "mkv", "avi", "mov", "webm", "flv", "wmv"],
+  "Pictures": ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "webp", "dng"],
+  "Audio": ["mp3", "wav", "aac", "flac", "ogg", "m4a"],
+  "Archives": ["zip", "rar", "7z", "tar", "gz", "bz2"]
+}

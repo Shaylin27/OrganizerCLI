@@ -1,21 +1,22 @@
 import json
 from pathlib import Path
 import shutil
+from icecream import ic
 
-path = Path.home() / "Downloads"
+selected_path = Path.home() / "Downloads"
 
 options = json.load(open('options.json', 'r'))
 
-for i, _ in options.items():
-    (path / i).mkdir(exist_ok=True)
+for folder_category, _ in options.items():
+    (selected_path / folder_category).mkdir(exist_ok=True)
 
-files = [f for f in path.iterdir() if f.is_file()]
+files = [f for f in selected_path.iterdir() if f.is_file()]
 
 for file in files:
-    ext = file.suffix.lower()[1:]
+    extensions = file.suffix.lower()[1:]
     for category in options:
-        if ext in options[category]:
-            # Leaving these debug statements here incase someone wants to under this better
-            # print(f'{ext=}, {category=}')
-            # print(f'{str(file)}')
-            shutil.move(str(file), str(path / category / file.name))
+        if extensions in options[category]:
+            shutil.move(str(file), str(selected_path / category / file.name))
+            # TODO: Remove this for release version
+            ic(str(file))
+            ic(str(selected_path / category / file.name))

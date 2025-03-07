@@ -1,2 +1,2 @@
-# download-organiser
- Organises your downloads for you given your own parameters
+# OrganizerCLI
+ Organises any folder of your choosing with your own options and choices!
